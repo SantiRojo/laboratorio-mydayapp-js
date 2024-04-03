@@ -1,8 +1,10 @@
 import "./css/base.css";
-import { createTask, printTasks } from "./js/utils";
-import { main, footer, todoInput } from "./js/nodes";
+import { createTask,showTaskListComponent } from "./js/utils";
+import { todoInput } from "./js/nodes";
 
 let taskList = [];
+
+window.addEventListener('load', showTaskListComponent(taskList));
 
 todoInput.addEventListener('keydown', (e) => {
   if ( e.keyCode === 13 ) {
@@ -13,7 +15,7 @@ todoInput.addEventListener('keydown', (e) => {
 
     console.log(taskList);
 
-    printTasks(taskList);
+    showTaskListComponent(taskList);
   }
 })
 
